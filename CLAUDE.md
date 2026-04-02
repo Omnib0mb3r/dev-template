@@ -24,15 +24,15 @@ Maintain `OTLC-Brainstorm.MD` throughout:
 
 The goal: a fresh Claude reading OTLC-Brainstorm.MD plus the project files should understand the true original intent — the why, not just the what.
 
-## devneural.json
+## devneural.jsonc
 
-- `devneural.json` is the source of truth for project stage and metadata.
+- `devneural.jsonc` is the source of truth for project stage and metadata.
 - When stage changes, update the file AND call the monday.com MCP `move_project` tool in the same step.
 - Never change `localPath` or `githubUrl` manually — managed by the SessionStart hook.
 
 ## monday.com Sync Rules
 
-When stage changes in devneural.json:
+When stage changes in devneural.jsonc:
 1. Call `move_project` MCP tool with the new stage.
 2. If this is a new project with no .Dev card yet, call `register_project` first.
 
@@ -56,4 +56,4 @@ When a bug, task, or idea is identified during a session, call `add_task` MCP to
 If asked to "sync devneural" or "sync monday", call the DevNeural API:
 `POST http://localhost:3747/sync`
 
-This reconciles all devneural.json files against the current monday.com board state.
+This reconciles all devneural.jsonc files against the current monday.com board state.
