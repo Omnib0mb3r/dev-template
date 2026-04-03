@@ -10,7 +10,7 @@ The **DevNeural API server** must be running for ecosystem context to load durin
 node /path/to/DevNeural/02-api-server/dist/server.js
 ```
 
-Runs on port `3747`. If the server is offline, sessions still work — you just get no graph context from the hook.
+Runs on port `3747`. If the server is offline, sessions still work — you just get no graph context from the hook. All DevNeural hooks are non-blocking and always exit cleanly, so they will never stall or interfere with a Claude session.
 
 ## What is included
 
@@ -26,6 +26,7 @@ Runs on port `3747`. If the server is offline, sessions still work — you just 
 2. Start a Claude session — the SessionStart hook auto-fills `devneural.jsonc` with `localPath`, `githubUrl`, `name`, and `description`
 3. Add your `tags` and `stage` to `devneural.jsonc`
 4. Run the brainstorming workflow to populate `OTLC-Brainstorm.MD`
+5. At the end of brainstorming, invoke `/writing-plans` — this transitions directly into the superpowers execution pipeline (plan → subagent execution → finish)
 
 ## devneural.jsonc
 
