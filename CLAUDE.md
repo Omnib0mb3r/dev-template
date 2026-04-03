@@ -13,7 +13,7 @@ When brainstorming, follow this process:
 6. Self-review the spec: scan for TBDs, contradictions, ambiguity, scope creep — fix inline
 7. Adversarial review: run Codex on the spec for an independent pass — incorporate any issues found
 8. Update OTLC-Brainstorm.MD with new decisions and session log
-9. Create an implementation plan
+9. Invoke `/writing-plans` to transition directly into the superpowers execution pipeline
 
 Maintain `OTLC-Brainstorm.MD` throughout:
 - **Vision** — written once in the first session. Never overwrite unless explicitly asked.
@@ -57,3 +57,4 @@ If asked to "sync devneural" or "sync monday", call the DevNeural API:
 `POST http://localhost:3747/sync`
 
 This reconciles all devneural.jsonc files against the current monday.com board state.
+
