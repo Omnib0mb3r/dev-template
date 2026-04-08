@@ -1,5 +1,7 @@
 # [Project Name] — Claude Instructions
 
+> Human-readable workflow docs live in [`WORKFLOW.md`](WORKFLOW.md). The rules below are the machine-readable authority for Claude.
+
 ## Brainstorming Sessions
 
 At the start of every session, if `OTLC-Brainstorm.MD` exists, read it before doing anything else.
