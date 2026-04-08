@@ -10,10 +10,10 @@
 // tags — free-form strings, e.g.:
 //   "autocad", "autolisp", "claude", "skill", "conveyor", "website", "api", "tool", "design"
 {
-  "name": "<PROJECT_NAME>",
-  "localPath": "<LOCAL_PATH>",
-  "githubUrl": "<GITHUB_URL>",
+  "name": "REPLACE_ME",
+  "localPath": "REPLACE_ME",
+  "githubUrl": "REPLACE_ME",
   "stage": "alpha",
   "tags": [],
-  "description": "<PROJECT_DESCRIPTION>"
+  "description": "REPLACE_ME"
 }
