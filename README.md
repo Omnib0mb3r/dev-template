@@ -17,16 +17,40 @@ Runs on port `3747`. If the server is offline, sessions still work — you just 
 | File | Purpose |
 |------|---------|
 | `devneural.jsonc` | Registers the project in the DevNeural graph. Most fields are auto-filled on first session start. |
-| `OTLC-Brainstorm.MD` | Living project memory — Vision, Architecture, Decisions, Open Questions, Session Log. |
-| `CLAUDE.md` | Project-level Claude instructions: brainstorm workflow, monday.com sync rules. |
+| `OTLC-Brainstorm.MD` | Living project memory — Vision, Architecture, Tools, Feature Workflow, Decisions, Open Questions, Session Log. |
+| `CLAUDE.md` | Project-level Claude instructions: PRE/RUN/POST/END brainstorm flow, monday.com sync rules. |
 
 ## First session workflow
 
 1. Clone the template into a new folder
 2. Start a Claude session — the SessionStart hook auto-fills `devneural.jsonc` with `localPath`, `githubUrl`, `name`, and `description`
 3. Add your `tags` and `stage` to `devneural.jsonc`
-4. Run the brainstorming workflow to populate `OTLC-Brainstorm.MD`
-5. At the end of brainstorming, invoke `/writing-plans` — this transitions directly into the superpowers execution pipeline (plan → subagent execution → finish)
+4. Tell Claude what you want to build — Claude will run the augmented brainstorming flow (see below) which populates `OTLC-Brainstorm.MD` and feeds straight into the superpowers execution pipeline
+
+## Feature workflow
+
+Every feature, bug, or improvement runs through the **superpowers pipeline wrapped with OTLC layers**. This is what Claude does on every session:
+
+### PRE — context load
+1. Read `OTLC-Brainstorm.MD` (Vision, Architecture, prior Decisions, Open Questions)
+2. **Vision check** — if blank, Claude asks you to define it before brainstorming starts
+3. **Visual Companion offer** — for layout, mockup, design, or diagram work, Claude offers to launch the Visual Companion
+
+### RUN — superpowers pipeline
+1. **Brainstorm** — `superpowers:brainstorming` produces a spec in `docs/superpowers/specs/`
+2. **Plan** — `superpowers:writing-plans` (auto-invoked) produces a plan in `docs/superpowers/plans/`
+3. **Execute** — `superpowers:subagent-driven-development` runs the plan task-by-task with review
+4. **Finish** — `superpowers:finishing-a-development-branch` (auto-invoked) merges, opens a PR, or discards
+
+### POST — log decisions (before plan phase)
+- Append to `Decisions Made` in `OTLC-Brainstorm.MD`
+- Append/resolve `Open Questions`
+- Update `Architecture` if structure changed
+
+### END — close the session
+- Append a dated `Session Log` entry: participants, what happened, what was built, next steps
+
+The full rules live in [`CLAUDE.md`](CLAUDE.md) and [`OTLC-Brainstorm.MD`](OTLC-Brainstorm.MD).
 
 ## devneural.jsonc
 
