@@ -4,25 +4,42 @@
 
 At the start of every session, if `OTLC-Brainstorm.MD` exists, read it before doing anything else.
 
-When brainstorming, follow this process:
-1. Explore current project context first (files, recent commits, existing decisions in OTLC-Brainstorm.MD)
-2. Ask clarifying questions one at a time
-3. Propose 2-3 approaches with trade-offs before settling on one
-4. Present the design section by section, get approval after each
-5. Write a spec to `docs/specs/<topic>.md`
-6. Self-review the spec: scan for TBDs, contradictions, ambiguity, scope creep — fix inline
-7. Adversarial review: run Codex on the spec for an independent pass — incorporate any issues found
-8. Update OTLC-Brainstorm.MD with new decisions and session log
-9. Invoke `/writing-plans` to transition directly into the superpowers execution pipeline
+Brainstorm work uses the **superpowers pipeline, augmented with OTLC layers**. Follow this exact order — do NOT jump straight into `superpowers:brainstorming` without the PRE steps, and do NOT advance to `writing-plans` without the POST steps.
 
-Maintain `OTLC-Brainstorm.MD` throughout:
-- **Vision** — written once in the first session. Never overwrite unless explicitly asked.
+### PRE — before invoking superpowers brainstorming
+
+1. **Read `OTLC-Brainstorm.MD`** in full — load Vision, Architecture, prior Decisions, and Open Questions into context.
+2. **Vision check** — if `## Vision` is empty or the user is starting a new direction, ask the user to define/confirm the Vision before going further. The Vision is written once and rarely overwritten.
+3. **Visual Companion offer** — if the topic involves layouts, mockups, designs, style choices, flow diagrams, or any visual comparison, offer to launch the Visual Companion before brainstorming begins.
+
+### RUN — superpowers pipeline
+
+1. **Brainstorm** — invoke `superpowers:brainstorming`. Produces a spec in `docs/superpowers/specs/`.
+2. **Plan** — `superpowers:writing-plans` is auto-invoked at the end of brainstorm. Produces a plan in `docs/superpowers/plans/`.
+3. **Execute** — `superpowers:subagent-driven-development` runs the plan task-by-task with spec + quality review after each task.
+4. **Finish** — `superpowers:finishing-a-development-branch` is auto-invoked at the end of execution.
+
+### POST — after the brainstorm spec is approved (BEFORE entering plan phase)
+
+Update `OTLC-Brainstorm.MD`:
+
+- **Decisions Made** — append a new dated entry summarizing the choices and trade-offs. Check for conflicts with prior entries before adding.
+- **Open Questions** — append any new ones. Mark resolved questions with `[x]` rather than deleting them.
+- **Architecture** — update only if structural decisions changed.
+
+### END — after the session ends
+
+- **Session Log** — append a brief dated entry: participants, what happened, what was built, next steps.
+
+### OTLC maintenance rules
+
+- **Vision** — written once. Never overwrite unless explicitly asked.
 - **Architecture** — update when structural decisions change.
-- **Decisions Made** — append after every session. Check for conflicts before adding.
-- **Open Questions** — append new questions. Mark resolved with [x] — never delete.
-- **Session Log** — append a brief summary at the end of every session.
+- **Decisions Made** — append-only. Check for conflicts before adding.
+- **Open Questions** — append new ones. Mark resolved with `[x]` — never delete.
+- **Session Log** — append at the end of every session.
 
-The goal: a fresh Claude reading OTLC-Brainstorm.MD plus the project files should understand the true original intent — the why, not just the what.
+The goal: a fresh Claude reading `OTLC-Brainstorm.MD` plus the project files should understand the true original intent — the why, not just the what.
 
 ## devneural.jsonc
 
