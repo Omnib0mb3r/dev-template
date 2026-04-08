@@ -10,10 +10,10 @@
 // tags — free-form strings, e.g.:
 //   "autocad", "autolisp", "claude", "skill", "conveyor", "website", "api", "tool", "design"
 {
-  "name": "REPLACE_ME",
-  "localPath": "REPLACE_ME",
-  "githubUrl": "REPLACE_ME",
+  "name": "dev-template",
+  "localPath": "c:/dev/Projects/dev-template",
+  "githubUrl": "https://github.com/Omnib0mb3r/dev-template",
   "stage": "alpha",
   "tags": [],
-  "description": "REPLACE_ME"
+  "description": "Project Name"
 }
