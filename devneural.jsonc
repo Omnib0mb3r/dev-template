@@ -10,10 +10,10 @@
 // tags — free-form strings, e.g.:
 //   "autocad", "autolisp", "claude", "skill", "conveyor", "website", "api", "tool", "design"
 {
-  "name": "dev-template",
-  "localPath": "c:/dev/Projects/dev-template",
-  "githubUrl": "https://github.com/Omnib0mb3r/dev-template",
+  "name": "<PROJECT_NAME>",
+  "localPath": "<LOCAL_PATH>",
+  "githubUrl": "<GITHUB_URL>",
   "stage": "alpha",
   "tags": [],
-  "description": "Project Name"
+  "description": "<PROJECT_DESCRIPTION>"
 }
