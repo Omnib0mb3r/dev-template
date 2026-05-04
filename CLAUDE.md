@@ -2,6 +2,11 @@
 
 > Human-readable workflow docs live in [`WORKFLOW.md`](WORKFLOW.md). The rules below are the machine-readable authority for Claude.
 
+## Answering Questions
+- When the user asks a question, ANSWER IT AND STOP. Do not make any changes, edits, commits, or other modifications to files or state. Do not barrel ahead into fixes, next steps, or unasked-for actions.
+- A question is NOT authorization to act. Sometimes the user wants to talk something out first. Wait for an explicit "proceed", "go ahead", "do it", or equivalent before taking action.
+- This applies even when the answer suggests an obvious next action, even when the fix looks trivial, and even when you are confident about what to do. Let the user choose whether and when to take it.
+
 ## Brainstorming Sessions
 
 At the start of every session, if `OTLC-Brainstorm.MD` exists, read it before doing anything else.
