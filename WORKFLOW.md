@@ -17,7 +17,7 @@ Runs on port `3747`. If the server is offline, sessions still work — you just 
 | File | Purpose |
 |------|---------|
 | `devneural.jsonc` | Registers the project in the DevNeural graph. Most fields are auto-filled on first session start. |
-| `OTLC-Brainstorm.MD` | Living project memory — Vision, Architecture, Tools, Feature Workflow, Decisions, Open Questions, Session Log. |
+| `OTLC-Brainstorm.md` | Living project memory — Vision, Architecture, Tools, Feature Workflow, Decisions, Open Questions, Session Log. |
 | `CLAUDE.md` | Project-level Claude instructions: PRE/RUN/POST/END brainstorm flow, monday.com sync rules. |
 | `README.md` | Placeholder stub — overwrite with the real project README. |
 | `WORKFLOW.md` | This file — the human-readable template workflow guide. |
@@ -28,7 +28,7 @@ Runs on port `3747`. If the server is offline, sessions still work — you just 
 2. Clone the new repo locally
 3. Start a Claude session — the SessionStart hook auto-fills `devneural.jsonc` with `localPath`, `githubUrl`, `name`, and `description`
 4. Add your `tags` and `stage` to `devneural.jsonc`
-5. Tell Claude what you want to build — Claude will run the augmented brainstorming flow (see below) which populates `OTLC-Brainstorm.MD` and feeds straight into the superpowers execution pipeline
+5. Tell Claude what you want to build — Claude will run the augmented brainstorming flow (see below) which populates `OTLC-Brainstorm.md` and feeds straight into the superpowers execution pipeline
 6. Ask Claude to write the real `README.md` when the project is ready (the template's `README.md` is a placeholder)
 
 ## Feature workflow
@@ -36,7 +36,7 @@ Runs on port `3747`. If the server is offline, sessions still work — you just 
 Every feature, bug, or improvement runs through the **superpowers pipeline wrapped with OTLC layers**. This is what Claude does on every session:
 
 ### PRE — context load
-1. Read `OTLC-Brainstorm.MD` (Vision, Architecture, prior Decisions, Open Questions)
+1. Read `OTLC-Brainstorm.md` (Vision, Architecture, prior Decisions, Open Questions)
 2. **Vision check** — if blank, Claude asks you to define it before brainstorming starts
 3. **Visual Companion offer** — for layout, mockup, design, or diagram work, Claude offers to launch the Visual Companion
 
@@ -47,14 +47,14 @@ Every feature, bug, or improvement runs through the **superpowers pipeline wrapp
 4. **Finish** — `superpowers:finishing-a-development-branch` (auto-invoked) merges, opens a PR, or discards
 
 ### POST — log decisions (before plan phase)
-- Append to `Decisions Made` in `OTLC-Brainstorm.MD`
+- Append to `Decisions Made` in `OTLC-Brainstorm.md`
 - Append/resolve `Open Questions`
 - Update `Architecture` if structure changed
 
 ### END — close the session
 - Append a dated `Session Log` entry: participants, what happened, what was built, next steps
 
-The full rules live in [`CLAUDE.md`](CLAUDE.md) and [`OTLC-Brainstorm.MD`](OTLC-Brainstorm.MD).
+The full rules live in [`CLAUDE.md`](CLAUDE.md) and [`OTLC-Brainstorm.md`](OTLC-Brainstorm.md).
 
 ## devneural.jsonc
 

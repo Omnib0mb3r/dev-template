@@ -9,13 +9,13 @@
 
 ## Brainstorming Sessions
 
-At the start of every session, if `OTLC-Brainstorm.MD` exists, read it before doing anything else.
+At the start of every session, if `OTLC-Brainstorm.md` exists, read it before doing anything else.
 
 Brainstorm work uses the **superpowers pipeline, augmented with OTLC layers**. Follow this exact order — do NOT jump straight into `superpowers:brainstorming` without the PRE steps, and do NOT advance to `writing-plans` without the POST steps.
 
 ### PRE — before invoking superpowers brainstorming
 
-1. **Read `OTLC-Brainstorm.MD`** in full — load Vision, Architecture, prior Decisions, and Open Questions into context.
+1. **Read `OTLC-Brainstorm.md`** in full — load Vision, Architecture, prior Decisions, and Open Questions into context.
 2. **Vision check** — if `## Vision` is empty or the user is starting a new direction, ask the user to define/confirm the Vision before going further. The Vision is written once and rarely overwritten.
 3. **Visual Companion offer** — if the topic involves layouts, mockups, designs, style choices, flow diagrams, or any visual comparison, offer to launch the Visual Companion before brainstorming begins.
 
@@ -28,7 +28,7 @@ Brainstorm work uses the **superpowers pipeline, augmented with OTLC layers**. F
 
 ### POST — after the brainstorm spec is approved (BEFORE entering plan phase)
 
-Update `OTLC-Brainstorm.MD`:
+Update `OTLC-Brainstorm.md`:
 
 - **Decisions Made** — append a new dated entry summarizing the choices and trade-offs. Check for conflicts with prior entries before adding.
 - **Open Questions** — append any new ones. Mark resolved questions with `[x]` rather than deleting them.
@@ -46,7 +46,7 @@ Update `OTLC-Brainstorm.MD`:
 - **Open Questions** — append new ones. Mark resolved with `[x]` — never delete.
 - **Session Log** — append at the end of every session.
 
-The goal: a fresh Claude reading `OTLC-Brainstorm.MD` plus the project files should understand the true original intent — the why, not just the what.
+The goal: a fresh Claude reading `OTLC-Brainstorm.md` plus the project files should understand the true original intent — the why, not just the what.
 
 ## devneural.jsonc
 
