@@ -18,6 +18,7 @@ Runs on port `3747`. If the server is offline, sessions still work — you just 
 |------|---------|
 | `devneural.jsonc` | Registers the project in the DevNeural graph. Most fields are auto-filled on first session start. |
 | `OTLC-Brainstorm.md` | Living project memory — Vision, Architecture, Tools, Feature Workflow, Decisions, Open Questions, Session Log. |
+| `BUGS.md` | Persistent bug tracker. Index block (id, status, summary) at the top, full detail entries below. Agents read the index first and check known OPEN bugs before debugging. |
 | `CLAUDE.md` | Project-level Claude instructions: PRE/RUN/POST/END brainstorm flow, monday.com sync rules. |
 | `README.md` | Placeholder stub — overwrite with the real project README. |
 | `WORKFLOW.md` | This file — the human-readable template workflow guide. |

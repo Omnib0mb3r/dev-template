@@ -7,6 +7,9 @@
 - A question is NOT authorization to act. Sometimes the user wants to talk something out first. Wait for an explicit "proceed", "go ahead", "do it", or equivalent before taking action.
 - This applies even when the answer suggests an obvious next action, even when the fix looks trivial, and even when you are confident about what to do. Let the user choose whether and when to take it.
 
+## Bug Tracker
+- This project keeps a persistent bug log in [`BUGS.md`](BUGS.md). Read its Index block first before debugging, log every bug there when found, and flip its status (OPEN, SMOKE-TESTING, RESOLVED, DEFERRED) in both the index and detail block as it moves. Full rules: see "Bug Tracker (BUGS.md)" in the global Claude instructions.
+
 ## Brainstorming Sessions
 
 At the start of every session, if `OTLC-Brainstorm.md` exists, read it before doing anything else.
