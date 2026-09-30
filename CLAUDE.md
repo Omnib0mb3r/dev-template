@@ -54,34 +54,5 @@ The goal: a fresh Claude reading `OTLC-Brainstorm.md` plus the project files sho
 ## devneural.jsonc
 
 - `devneural.jsonc` is the source of truth for project stage and metadata.
-- When stage changes, update the file AND call the monday.com MCP `move_project` tool in the same step.
 - Never change `localPath` or `githubUrl` manually — managed by the SessionStart hook.
-
-## monday.com Sync Rules
-
-When stage changes in devneural.jsonc:
-1. Call `move_project` MCP tool with the new stage.
-2. If this is a new project with no .Dev card yet, call `register_project` first.
-
-Stage → .Dev board column:
-- `alpha` → Alpha
-- `beta` → Beta
-- `deployed` → Released
-- `archived` → Archived
-
-Pre-Release is a manual promotion only — never move there automatically.
-
-## Adding Tasks
-
-When a bug, task, or idea is identified during a session, call `add_task` MCP tool:
-- Default column: Backlog
-- Use "To Do" for confirmed next actions
-- Use "In Progress" only if actively being worked on this session
-
-## Force Sync
-
-If asked to "sync devneural" or "sync monday", call the DevNeural API:
-`POST http://localhost:3747/sync`
-
-This reconciles all devneural.jsonc files against the current monday.com board state.
 

@@ -5,7 +5,7 @@
 //   "beta"      → feature complete, in testing
 //   "deployed"  → live / released
 //   "archived"  → inactive
-//   NOTE: "pre-release" is a manual promotion on monday.com only — never set it here
+//   NOTE: "pre-release" is a manual promotion only, never set it here
 //
 // tags — free-form strings, e.g.:
 //   "autocad", "autolisp", "claude", "skill", "conveyor", "website", "api", "tool", "design"

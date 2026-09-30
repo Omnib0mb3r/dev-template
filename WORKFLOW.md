@@ -19,7 +19,7 @@ Runs on port `3747`. If the server is offline, sessions still work — you just 
 | `devneural.jsonc` | Registers the project in the DevNeural graph. Most fields are auto-filled on first session start. |
 | `OTLC-Brainstorm.md` | Living project memory — Vision, Architecture, Tools, Feature Workflow, Decisions, Open Questions, Session Log. |
 | `BUGS.md` | Persistent bug tracker. Index block (id, status, summary) at the top, full detail entries below. Agents read the index first and check known OPEN bugs before debugging. |
-| `CLAUDE.md` | Project-level Claude instructions: PRE/RUN/POST/END brainstorm flow, monday.com sync rules. |
+| `CLAUDE.md` | Project-level Claude instructions: PRE/RUN/POST/END brainstorm flow. |
 | `README.md` | Placeholder stub — overwrite with the real project README. |
 | `WORKFLOW.md` | This file — the human-readable template workflow guide. |
 
@@ -71,13 +71,3 @@ The full rules live in [`CLAUDE.md`](CLAUDE.md) and [`OTLC-Brainstorm.md`](OTLC-
 ```
 
 Tags are the primary driver of cross-project connections in the DevNeural graph. Use them to describe the domain, tooling, and patterns in the project (e.g. `"autolisp"`, `"api"`, `"claude"`, `"conveyor"`).
-
-## Stage sync
-
-When `stage` changes, Claude will call the monday.com MCP `move_project` tool automatically. For new projects with no board card yet, `register_project` is called first.
-
-To manually reconcile all projects against the monday.com board:
-
-```
-sync devneural
-```
