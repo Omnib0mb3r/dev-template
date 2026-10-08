@@ -3,10 +3,12 @@
 > HOW TO READ THIS FILE
 > 1. Read the Index block below FIRST. Do not load the whole file.
 > 2. Open a bug's detail block only when you need that specific bug.
-> 3. Before troubleshooting, scan the Index for OPEN / SMOKE-TESTING bugs in the area you are touching.
+> 3. Before troubleshooting, scan the Index for OPEN / IN-PROGRESS / SMOKE-TESTING bugs in the area you are touching.
 >
 > Full usage rules live in the global Claude instructions ("Bug Tracker (BUGS.md)").
-> Statuses: OPEN -> SMOKE-TESTING -> RESOLVED. DEFERRED = real bug, intentionally not fixed yet.
+> Statuses: OPEN (nobody has started it) -> IN-PROGRESS (flip it the moment work starts; never start over on one
+> already in progress) -> SMOKE-TESTING (fix landed) -> RESOLVED. From SMOKE-TESTING a bug can also go back to
+> IN-PROGRESS (the check failed) or to DEFERRED (on hold, a real bug intentionally parked, with the reason).
 
 <!-- INDEX START -->
 ## Index (start here)
