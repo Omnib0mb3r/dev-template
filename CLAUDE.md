@@ -19,7 +19,7 @@ Brainstorm work uses the **superpowers pipeline, augmented with OTLC layers**. F
 ### PRE — before invoking superpowers brainstorming
 
 1. **Read `OTLC-Brainstorm.md`** in full — load Vision, Architecture, prior Decisions, and Open Questions into context.
-2. **Vision check** — if `## Vision` is empty or the user is starting a new direction, ask the user to define/confirm the Vision before going further. The Vision is written once and rarely overwritten.
+2. **Vision check**: if `## Vision` is empty, or the user is starting a new direction or describes the project more broadly than the Vision does, offer to define or update the Vision before going further.
 3. **Visual Companion offer** — if the topic involves layouts, mockups, designs, style choices, flow diagrams, or any visual comparison, offer to launch the Visual Companion before brainstorming begins.
 
 ### RUN — superpowers pipeline
@@ -43,7 +43,7 @@ Update `OTLC-Brainstorm.md`:
 
 ### OTLC maintenance rules
 
-- **Vision** — written once. Never overwrite unless explicitly asked.
+- **Vision**: a living statement. Update it whenever the user's picture of the project grows, and add a dated history line saying what changed so the original intent stays readable.
 - **Architecture** — update when structural decisions change.
 - **Decisions Made** — append-only. Check for conflicts before adding.
 - **Open Questions** — append new ones. Mark resolved with `[x]` — never delete.
